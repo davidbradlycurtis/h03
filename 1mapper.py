@@ -1,4 +1,4 @@
-input = open("d.txt", "r")
+input = open("purchases.txt", "r")
 output = open("01.txt", "w")
 
 for line in input:
@@ -8,3 +8,4 @@ for line in input:
 
 input.close()
 output.close()
+print("Done")

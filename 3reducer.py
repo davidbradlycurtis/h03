@@ -1,17 +1,17 @@
-s = open("s.txt","r")
-r = open("r.txt", "w")
+input_file = open("02.txt","r")
+output_file = open("r.txt", "w")
 
 thisKey = ""
 thisValue = 0.0
 
-for line in s:
+for line in input_file:
   data = line.strip().split('\t')
   store, amount = data
 
   if store != thisKey:
     if thisKey:
       # output the last key value pair result
-      r.write(thisKey + '\t' + str(thisValue)+'\n')
+      output_file.write(thisKey + '\t' + str(thisValue)+'\n')
 
     # start over when changing keys
     thisKey = store 
@@ -21,7 +21,8 @@ for line in s:
   thisValue += float(amount)
 
 # output the final entry when done
-r.write(thisKey + '\t' + str(thisValue)+'\n')
+output_file.write(thisKey + '\t' + str(thisValue)+'\n')
 
-s.close()
-r.close()
+input_file.close()
+output_file.close()
+print("Done")
